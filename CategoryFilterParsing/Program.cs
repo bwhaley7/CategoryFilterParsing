@@ -59,6 +59,7 @@ if (input == "1")
 
 if(input == "2")
 {
+    string filePath = Path.Combine(documentsPath, "FinalOutput.txt");
     Console.WriteLine("Please enter the file location of your category facet output: ");
     Console.ReadLine(); // C:\\Users\\Braden\\Documents\\CategoryFacetsOutput.txt
 
@@ -78,7 +79,7 @@ if(input == "2")
             prompt.AppendLine(facet.ShortDescription);
         }
         var response = await OAM.GetChatCompletionAsync(prompt.ToString());
-
+        await File.AppendAllTextAsync(filePath, response + "\n\n");
         Console.WriteLine(response);
 
         prompt.Clear();
