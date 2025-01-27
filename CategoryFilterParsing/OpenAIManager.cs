@@ -40,7 +40,7 @@ namespace CategoryFilterParsing
                     new { role = "system", content = _prompt },
                     new { role = "user", content = prompt }
                 },
-                temperature = 0.3
+                temperature = 0.3//
 
             };
 

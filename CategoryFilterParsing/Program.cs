@@ -15,7 +15,7 @@ Console.Clear();
 if (input == "1")
 {
     Console.WriteLine("Please enter the file path of the Excel workbook you would like to use:");
-    var fileLoc = Console.ReadLine(); // C:\\Users\\Braden\\Downloads\\cats.xlsx
+    var fileLoc = Console.ReadLine();
     ExcelFileManager EFM = new ExcelFileManager(fileLoc);
     DataManager DM = new DataManager(EFM.ReadExcelWorkbook());
 
@@ -61,7 +61,7 @@ if(input == "2")
 {
     string filePath = Path.Combine(documentsPath, "FinalOutput.txt");
     Console.WriteLine("Please enter the file location of your category facet output: ");
-    Console.ReadLine(); // C:\\Users\\Braden\\Documents\\CategoryFacetsOutput.txt
+    Console.ReadLine();
 
     //The text file is in JSON format. We need to read the JSON into a list of CategoryData objects. We will then use these objects to rank the facets via openAI api.
 
